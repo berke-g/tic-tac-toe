@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic-Tac-Toe</title>
+        <link rel="stylesheet" type="text/css" href="ttt.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td class="row1 col1" onclick="myFunction(this)"></td>
+                <td class="row1 col2" onclick="myFunction(this)"></td>
+                <td class="row1 col3" onclick="myFunction(this)"></td>
+            </tr>
+            <tr>
+                <td class="row2 col1" onclick="myFunction(this)"></td>
+                <td class="row2 col2" onclick="myFunction(this)"></td>
+                <td class="row2 col3" onclick="myFunction(this)"></td>
+            </tr>
+            <tr>
+                <td class="row3 col1" onclick="myFunction(this)"></td>
+                <td class="row3 col2" onclick="myFunction(this)"></td>
+                <td class="row3 col3" onclick="myFunction(this)"></td>
+            </tr>
+        </table>
+
+        <a id="gameovertext"></a> 
+        <br />
+        <a id="winnertext"></a> 
+        <br />
+
+        <button onclick="reset()">Reset</button>
+
+        <script type="text/javascript" src="ttt.js"></script>
+    </body>
+</html>
