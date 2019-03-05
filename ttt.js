@@ -21,7 +21,6 @@ function reset() {
     
     document.getElementById("gameovertext").innerHTML = "";
     document.getElementById("winnertext").innerHTML = "";
-
 }
 
 function allEqual(arr) {
@@ -39,7 +38,7 @@ function allEqual(arr) {
     return true;
 }
 
-function gameOverCheck() { //TODO: check for diagonal
+function gameOverCheck() {
     var row1 = document.getElementsByClassName('row1');
     var row2 = document.getElementsByClassName('row2');
     var row3 = document.getElementsByClassName('row3');
@@ -48,7 +47,7 @@ function gameOverCheck() { //TODO: check for diagonal
     var col2 = document.getElementsByClassName('col2');
     var col3 = document.getElementsByClassName('col3');
 
-    if ( 
+    if (
         allEqual(row1) ||
         allEqual(row2) ||
         allEqual(row3) ||
@@ -59,14 +58,12 @@ function gameOverCheck() { //TODO: check for diagonal
             gameOver = true;
         }
 
-
     console.log("row1 is all equal: " + allEqual(row1));
     console.log("row2 is all equal: " + allEqual(row2));
     console.log("row3 is all equal: " + allEqual(row3));
     console.log("col1 is all equal: " + allEqual(col1));
     console.log("col2 is all equal: " + allEqual(col2));
     console.log("col3 is all equal: " + allEqual(col3));
-
 }
 
 function myFunction(x) {
@@ -74,9 +71,11 @@ function myFunction(x) {
 
     if (turn % 2 == 0 && x.innerHTML === '' && !gameOver) {
         x.innerHTML = "X";
+        x.style.color = "darkred";
         turn += 1;
     } else if (turn % 2 == 1 && x.innerHTML === '' && !gameOver ) {
         x.innerHTML = "O";
+        x.style.color = "darkblue";
         turn += 1;
     }
 
@@ -87,9 +86,11 @@ function myFunction(x) {
         if (turn % 2 == 0) {
             document.getElementById("gameovertext").innerHTML = "Game Over";
             document.getElementById("winnertext").innerHTML = "O Won!";
+            document.getElementById("winnertext").style.color = "darkblue";
         } else if (turn % 2 == 1) {
             document.getElementById("gameovertext").innerHTML = "Game Over";
             document.getElementById("winnertext").innerHTML = "X Won!";
+            document.getElementById("winnertext").style.color = "darkred";
         }
     }
 }
