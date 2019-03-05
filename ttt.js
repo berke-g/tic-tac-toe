@@ -23,6 +23,38 @@ function reset() {
     document.getElementById("winnertext").innerHTML = "";
 }
 
+function antiDiagonalEqual() {
+    var row0 = document.getElementsByClassName('row1');
+    var row1 = document.getElementsByClassName('row2');
+    var row2 = document.getElementsByClassName('row3');
+
+    var top_right = row0[2].innerHTML;
+    var center = row1[1].innerHTML;
+    var bottom_left = row2[0].innerHTML;
+
+    if ( top_right === '' || center === '' || bottom_left === '') {
+        return false;
+    } else {
+        return top_right === center && top_right === bottom_left && center == bottom_left;
+    }
+}
+
+function mainDiagonalEqual() {
+    var row0 = document.getElementsByClassName('row1');
+    var row1 = document.getElementsByClassName('row2');
+    var row2 = document.getElementsByClassName('row3');
+
+    var top_left = row0[0].innerHTML;
+    var center = row1[1].innerHTML;
+    var bottom_right = row2[2].innerHTML;
+
+    if ( top_left === '' || center === '' || bottom_right === '') {
+        return false;
+    } else {
+        return top_left === center && top_left === bottom_right && center == bottom_right;
+    } 
+}
+
 function allEqual(arr) {
     var first = arr[0].innerHTML;
 
@@ -55,6 +87,8 @@ function gameOverCheck() {
         allEqual(col2) ||
         allEqual(col3) 
         ) {
+            gameOver = true;
+        } else if (mainDiagonalEqual() || antiDiagonalEqual() ) {
             gameOver = true;
         }
 
