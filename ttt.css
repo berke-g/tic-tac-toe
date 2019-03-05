@@ -14,15 +14,15 @@ table {
 td {
     border: 8px solid black;
     border-collapse: collapse;    
-    font: bold 100px sans-serif;
+    font: bold 130px sans-serif;
     text-align: center;
     height: 160px;
-
 }
 
 td:hover{
-    background-color: darkblue;
+    background-color: darkturquoise;
     cursor: pointer;
+    border-radius: 25%;
 }
 
 table tr:first-child td {
